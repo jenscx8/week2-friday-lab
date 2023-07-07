@@ -7,9 +7,15 @@ class Animal {
         this.color = color
         this.hunger = hunger
     }
-    greet(){
-        console.log(`hi, i am ${this.name} the ${this.species}`)
+    greet(greeting = 'hi'){
+        console.log(`${greeting}, i am ${this.name} the ${this.species}`)
     }
+    /*
+    greet(greeting = 'hi'){
+        console.log(`${greeting}, i am ${this.name} the ${this.species}`)
+    }
+     */
+
     feed(){
         this.hunger -= 20
         console.log('yum i love food')
@@ -24,7 +30,7 @@ class Cat extends Animal {
         this.food = 'fish'
     }
     greet(){
-        console.log(`meeeww, i am ${this.name} the ${this.species}`)
+        super.greet('mewwwww')
     }
     feed(){
         this.hunger -= 20
@@ -38,7 +44,7 @@ class Dog extends Animal {
         this.food = 'kibble'
     }
     greet(){
-        console.log(`woof, i am ${this.name} the ${this.species}`)
+        super.greet('woofer')
     }
     feed(){
         this.hunger -= 20
